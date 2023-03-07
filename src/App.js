@@ -1,27 +1,21 @@
 import "./App.css";
-import {
-BrowserRouter as Router,
-Switch,
-Route,
-Routes,
-Redirect,
-} from "react-router-dom";
+import {Route,Routes} from "react-router-dom";
 import Home from "./components/Home";
-import ContactUs from "./components/ContactUs";
 import About from "./components/About";
+import TempConv from "./components/TepConv";
+import { Akash } from "./components/Akash";
 
 function App() {
 return (
 	<>
-	<Router>
 		<Routes>
-		<Route exact path="/" component={Home} />
+		<Route  path="/" element={<Home/>} />
 	
-		<Route path="/about" component={About} />
+		<Route path="/about" element={<About/>} />
 
-		<Route path="/contactus" component={ContactUs} />
+		<Route path="/tempconv" element={<TempConv/>} />
+		<Route path="akash/:id" element={<Akash/>}/>
 		</Routes>
-	</Router>
 	</>
 );
 }

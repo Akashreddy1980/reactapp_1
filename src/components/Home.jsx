@@ -1,30 +1,26 @@
-import React from "react";
-// importing Link from react-router-dom to navigate to
-// different end points.
-import { Link } from "react-router-dom";
-import { NavLink } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 
-let Home = () => {
+const Home =  () => {
+	const [pageno , setpageno] = useState('');
 return (
 	<div>
 	<h1>Home Page</h1>
 	<br />
 	<ul>
 		<li>
-		{/* Endpoint to route to Home component */}
 		<Link to="/">Home</Link>
 		</li>
 		<li>
-		{/* Endpoint to route to About component */}
 		<Link to="/about">About</Link>
 		</li>
 		<li>
-		{/* Endpoint to route to Contact Us component */}
-		<Link to="/contactus">Contact Us</Link>
+		<Link to="/tempconv">Temperature Conversion</Link>
 		</li>
+		<input value={pageno} placeholder="Page No" onChange={(e) => setpageno(e.target.value)}/>
+		<Link to ={"/akash/"+ pageno} >Submit</Link>
 	</ul>
 	</div>
 );
-};
-
+}
 export default Home;
